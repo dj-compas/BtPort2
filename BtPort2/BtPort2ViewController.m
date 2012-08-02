@@ -26,7 +26,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
+	
 	self.navigationController.navigationBarHidden = YES;
+	
 	
 	UISearchBar *s = self.search;
 	s.showsScopeBar = NO;
@@ -86,6 +88,7 @@
 		rvc.query = query;
 		rvc.delegate = self;
 		rvc.scope = scope;
+		
 	}
 }
 

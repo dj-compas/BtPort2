@@ -17,6 +17,7 @@
 		061EBB8715CACCBB00004459 /* BtPort2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 061EBB8615CACCBB00004459 /* BtPort2ViewController.m */; };
 		061EBB8F15CACD6100004459 /* HomeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 061EBB8E15CACD6100004459 /* HomeScreen.m */; };
 		061EBB9A15CAE60500004459 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 061EBB9915CAE60500004459 /* ResultsViewController.m */; };
+		061EBB9D15CB2BFE00004459 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 061EBB9C15CB2BFE00004459 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		061EBB8E15CACD6100004459 /* HomeScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeScreen.m; path = ../HomeScreen.m; sourceTree = "<group>"; };
 		061EBB9815CAE60500004459 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		061EBB9915CAE60500004459 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		061EBB9B15CB2BFE00004459 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
+		061EBB9C15CB2BFE00004459 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 		061EBB7615CACCBB00004459 /* BtPort2 */ = {
 			isa = PBXGroup;
 			children = (
+				061EBB9B15CB2BFE00004459 /* DetailViewController.h */,
+				061EBB9C15CB2BFE00004459 /* DetailViewController.m */,
 				061EBB8D15CACD6100004459 /* HomeScreen.h */,
 				061EBB8E15CACD6100004459 /* HomeScreen.m */,
 				061EBB7F15CACCBB00004459 /* BtPort2AppDelegate.h */,
@@ -177,6 +182,7 @@
 				061EBB8715CACCBB00004459 /* BtPort2ViewController.m in Sources */,
 				061EBB8F15CACD6100004459 /* HomeScreen.m in Sources */,
 				061EBB9A15CAE60500004459 /* ResultsViewController.m in Sources */,
+				061EBB9D15CB2BFE00004459 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

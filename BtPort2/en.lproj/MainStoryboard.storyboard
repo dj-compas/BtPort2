@@ -12,7 +12,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="searchView" id="2" customClass="BtPort2ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3" customClass="HomeScreen">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" barStyle="blackOpaque" placeholder="Search" showsCancelButton="YES" showsScopeBar="YES" id="J0z-iZ-MqS">
@@ -32,8 +32,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.65882354974746704" green="0.87843143939971924" blue="0.058823533356189728" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bF4-Rk-iPJ"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" id="bF4-Rk-iPJ">
+                        <barButtonItem key="backBarButtonItem" title="Search" id="ZE0-RV-Xdi"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="search" destination="J0z-iZ-MqS" id="bB6-9u-O2d"/>
                         <outlet property="view" destination="3" id="ocI-9w-SDa"/>
@@ -41,7 +42,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="978" y="56"/>
+            <point key="canvasLocation" x="908" y="56"/>
         </scene>
         <!--Results View Controller - Results-->
         <scene sceneID="wnT-fl-s4n">
@@ -53,15 +54,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultCell" textLabel="X49-xe-cTQ" style="IBUITableViewCellStyleDefault" id="v1h-b1-AyG">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultCell" textLabel="X49-xe-cTQ" style="IBUITableViewCellStyleDefault" id="v1h-b1-AyG">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X49-xe-cTQ">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -73,13 +74,29 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Results" id="M8o-LO-u6v">
-                        <barButtonItem key="backBarButtonItem" title="Home" id="vd9-qv-xHV"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Results" id="M8o-LO-u6v"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <connections>
+                        <segue destination="Wyp-t7-MKp" kind="push" identifier="toDetail" id="Ozj-Mt-seE"/>
+                    </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1002" y="727"/>
+            <point key="canvasLocation" x="476" y="644"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="pET-LU-rcf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdt-9W-ceH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="detailView" id="Wyp-t7-MKp" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EBN-p3-qfP">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8nO-gQ-s2D"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="908" y="644"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5g7-7G-Lfe">
@@ -101,6 +118,23 @@
             <point key="canvasLocation" x="476" y="56"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BtPort2ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BtPort2ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="search" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+        </class>
+        <class className="HomeScreen" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeScreen.h"/>
+        </class>
+        <class className="ResultsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

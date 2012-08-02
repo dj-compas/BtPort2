@@ -7,6 +7,7 @@
 //
 
 #import "ResultsViewController.h"
+#import "DetailViewController.h"
 
 @interface ResultsViewController ()
 {
@@ -14,6 +15,7 @@
 	NSDictionary *json;
 	NSURL *url;
 	NSMutableArray *resultsArray;
+	NSString *clickedResultName;
 }
 
 @end
@@ -252,6 +254,22 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
+	clickedResultName = cell.textLabel.text;
+	NSLog(@"Selected cell: %@", clickedResultName);
+	[self performSegueWithIdentifier:@"toDetail" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if([[segue identifier] isEqualToString:@"toDetail"])
+	{
+		DetailViewController *dvc = (DetailViewController *) [segue destinationViewController];
+		dvc.delegate = self;
+		dvc.title = clickedResultName;
+		self.navigationItem.backBarButtonItem.title = @"Results";
+		
+	}
 }
 
 @end
